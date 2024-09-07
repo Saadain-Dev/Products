@@ -1,45 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1, initial-scale=1.0">
     <!-- LINK TAILWIND -->
     <script src="https://cdn.tailwindcss.com"></script>
-     <!-- font-awesome Link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- font-awesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- axios link -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Document</title>
     <style>
-    .responsive-sidebar{left: -100% !important;}
-    .responsive-sidebar.active{left: 0% !important;}
+        .responsive-sidebar {
+            left: -100% !important;
+        }
+
+        .responsive-sidebar.active {
+            left: 0% !important;
+        }
     </style>
 </head>
+
 <body class="flex px-[2vw] gap-8 pb-10 h-[100vh]">
     <!-- Side-Bar -->
-    <div class="flex flex-col w-[300px] h-[calc(100vh-20px)] pt-5 px-5  md:pe-5  bg-white absolute duration-500 md:static z-10 md:left-0 responsive-sidebar overflow-y-auto">
-       
+    <div
+        class="flex flex-col w-[300px] h-[calc(100vh-20px)] pt-5 px-5  md:pe-5  bg-white absolute duration-500 md:static z-10 md:left-0 responsive-sidebar overflow-y-auto">
+
         <form action="" class="flex gap-5 mb-5 md:mt-0 relative">
             <button class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md 
-            sidebar-btn md:hidden">
+            sidebar-btn md:hidden shadow-md">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-            <input type="text" class="inp px-3 py-1 outline-none bg-gray-100 hover:bg-gray-200 rounded-md w-full" placeholder="Search...">
+            <input type="text" class="inp px-3 py-1 outline-none bg-gray-50 hover:bg-gray-100 rounded-md w-full shadow-md"
+                placeholder="Search...">
             <i class="fa-solid fa-magnifying-glass absolute right-3 top-2"></i>
         </form>
         <div>
             <h1 class="font-semibold">Category</h1>
-            <ul class="flex flex-col gap-2 mt-3 text-sm text-gray-600">
-                <button class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md text-left">All</button>
-               <select name="" id="" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md">
-                 <button>
+            <ul class="flex flex-col gap-3 mt-3 text-sm text-gray-600">
+                <button class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md text-left shadow-md">All</button>
+                <select name="" id="" class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md shadow-md">
+                    <button>
                         <option value="">All Mobiles</option>
                         <option value="">Iphone</option>
                         <option value="">Android</option>
                     </button>
                 </select>
-               <select name="" id="" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md">
-                 <button>
+                <select name="" id="" class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md shadow-md">
+                    <button>
                         <option value="">All Laptops</option>
                         <option value="">Apple</option>
                         <option value="">Dell</option>
@@ -47,29 +58,29 @@
                         <option value="">Lenevo</option>
                     </button>
                 </select>
-               <select name="" id="" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md">
-                 <button>
+                <select name="" id="" class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md shadow-md">
+                    <button>
                         <option value="">All Computers</option>
                         <option value="">Dell</option>
                         <option value="">HP</option>
                         <option value="">Lenevo</option>
                     </button>
                 </select>
-               <select name="" id="" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md">
-                 <button>
+                <select name="" id="" class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md shadow-md">
+                    <button>
                         <option value="">All Watches</option>
                         <option value="">Hand Watch</option>
                         <option value="">Smart Watch</option>
                         <option value="">Wall Clock</option>
                     </button>
                 </select>
-                <li class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md"><a href="">Accessories</a></li>
-                <li class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md"><a href="./create.html">Create</a></li>
+                <li class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md shadow-md"><a href="">Accessories</a></li>
+                <li class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md shadow-md"><a href="./createhtml">Create</a></li>
             </ul>
         </div>
         <div class="mt-4">
             <h1 class="font-semibold mb-3">Company</h1>
-            <select name="" id="" class="px-3 py-1 text-sm bg-gray-100 hover:bg-gray-200 rounded-md cursor-pointer">
+            <select name="" id="" class="px-3 py-1 text-sm bg-gray-50 hover:bg-gray-100 rounded-md cursor-pointer">
                 <option value="">Select</option>
                 <option value="">All</option>
                 <option value="">Mobile</option>
@@ -84,30 +95,37 @@
             <h1 id="valueDisplay" class="text-sm text-gray-600">$20,000,000</h1>
             <input type="range" id="rangeInput" class="w-[50%]" min="0" max="20000000" step="100000" value="20000000">
         </div>
-        <button class="py-2 px-5 text-sm mt-5 bg-gray-100 hover:bg-red-500 duration-500 rounded-md">CLEAR FILTERS</button>
+        <button class="py-2 px-5 text-sm mt-5 bg-gray-50 hover:bg-red-500 duration-500 rounded-md">CLEAR
+            FILTERS</button>
     </div>
-    
+
     <!-- Side-Bar -->
 
-     <!-- Products-Section -->
-     <div class="w-full pt-5">
+    <!-- Products-Section -->
+    <div class="w-full pt-5">
         <div class="flex justify-between items-center">
             <div class="hidden md:block">
-                <button class=" px-2 py-1 text-white px-3 py-1 bg-gray-900 hover:bg-gray-700 rounded-md me-2"><i class="fa-brands fa-windows"></i></button>
-                <button class=" px-2 py-1  bg-gray-100 hover:bg-gray-200 rounded-md"><i class="fa-solid fa-bars"></i></button>
+                <button class=" px-2 py-1 text-white bg-gray-900 hover:bg-gray-700 rounded-md me-2"><i
+                        class="fa-brands fa-windows"></i></button>
+                <button class=" px-2 py-1 bg-gray-50 hover:bg-gray-100 rounded-md"><i
+                        class="fa-solid fa-bars"></i></button>
             </div>
-            <button class="px-2 py-1 px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md md:hidden sidebar-btn"><i class="fa-solid fa-bars"></i></button>
+            <button class="px-2 py-1 px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md md:hidden sidebar-btn"><i
+                    class="fa-solid fa-bars"></i></button>
             <h1 class="text-gray-400 text-sm "><span class="Product-length">0</span> Total Products</h1>
-            <select name="" id="" class="px-2 w-20 py-1 text-sm bg-gray-100 hover:bg-gray-200 rounded-md cursor-pointer">
+            <select name="" id=""
+                class="px-2 w-20 py-1 text-sm bg-gray-50 hover:bg-gray-100 rounded-md cursor-pointer">
                 <option value="">Select</option>
                 <option value="">High(Price)</option>
                 <option value="">Lowest(Price)</option>
             </select>
         </div>
-        <div class="w-full card grid sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-5 place-items-center h-[550px] overflow-y-auto">
+        <div
+            class="w-full card grid sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-5 place-items-center h-[550px] overflow-y-auto">
         </div>
     </div>
-     <!-- Products-Section -->
-      <Script src="./Script.js"></Script>
+    <!-- Products-Section -->
+    <Script src="./Script.js"></Script>
 </body>
+
 </html>

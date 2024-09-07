@@ -23,8 +23,8 @@ const productCard = ({ title, img, price, desc }) => {
             </div>
             </a>
             <div class="px-3 pb-3 flex justify-between">
-                <a href="#"><h5 class="text-lg font-semibold line-clamp-1">${title}</h5></a>
-                <span class="text-xl font-bold">$${price}</span>
+                <a href="#"><h5 class="text-xl font-semibold line-clamp-1 text-gray-800">${title}</h5></a>
+                <span class="text-lg font-semibold text-gray-800">$${price}</span>
             </div>
         </div>
         `;
