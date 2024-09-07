@@ -13,9 +13,9 @@
 </head>
 <body class="flex px-[5vw]">
     <!-- Side-Bar -->
-    <div class="flex flex-col  w-[400px] mt-5">
+    <div class="flex flex-col w-[200px] md:w-[400px] mt-5 absolute md:relative z-10 left-0 hidden md:block bg-white px-5 md:px-0">
     <form action="" class="flex mb-5">
-        <input type="text" class="inp border px-3 py-1 outline-none" placeholder="Search...">
+        <input type="text" class="inp border px-3 py-1 outline-none w-full md:w-[200px]" placeholder="Search...">
     </form>
     <div>
         <h1 class="font-semibold">Category</h1>
@@ -59,13 +59,14 @@
 
      <!-- Products-Section -->
      <div class="w-full  mt-5">
-        <div class="flex justify-between">
-            <div>
+        <div class="flex justify-between items-center">
+            <div class="hidden md:block">
                 <button class=" px-2 py-1 text-white bg-black me-2"><i class="fa-brands fa-windows"></i></button>
                 <button class=" px-2 py-1 text-gray-400 bg-gray-200"><i class="fa-solid fa-bars"></i></button>
             </div>
-            <h1 class="text-gray-400">0 Total Products</h1>
-            <select name="" id="" class="px-3 py-1 text-sm bg-white border text-gray-400 cursor-pointer">
+            <button class=" px-2 py-1 text-gray-400 bg-gray-200 md:hidden"><i class="fa-solid fa-bars"></i></button>
+            <h1 class="text-gray-400 text-sm "><span class="Product-length">0</span> Total Products</h1>
+            <select name="" id="" class="px-3 w-20 py-1 text-sm bg-white border text-gray-400 cursor-pointer">
                 <option value="">Select</option>
                 <option value="">High(Price)</option>
                 <option value="">Middle(Price)</option>
