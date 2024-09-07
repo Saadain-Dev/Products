@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- LINK TAILWIND -->
+    <script src="https://cdn.tailwindcss.com"></script>
+     <!-- font-awesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- axios link -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+<style>
+    .spiner {
+    border-top-color: transparent;
+  }
+</style>
+</head>
+<body class=" bg-slate-900">
+  <nav class="flex flex-col sm:flex-row justify-between gap-4 sm:gap-0 text-white py-5 bg-black px-[5vw]">
+    <a href="" class="logo text-2xl text-center sm:text-left">Home</a>
+    <ul class="flex gap-5 text-xl mx-auto sm:mx-0">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="">Service</a></li>
+      <li><a href="">Blog</a></li>
+      <li><a href="./create.html">Create</a></li>
+      <li><a href="https://mockapi.io/projects/66d70f85006bfbe2e64fa811">Server</a></li>
+    </ul>
+  </nav>
+  <div class="flex justify-center items-center w-[90%] sm:w-[70%] mx-auto ">
+    <form class="flex flex-col gap-5 text-white w-full mt-8">
+        <div class="flex flex-col  gap-3">
+            <label class="block font-bold">Product Title</label>
+            <input class="border  py-2 px-4 bg-transparent outline-none"type="text" id="title" onchange="getData(this)" required>
+          </div>
+          <div class="flex flex-col gap-4">
+            <label class="block font-bold">Select Product Image</label>
+            <input class="border w-full py-2 px-4 bg-transparent outline-none" id="img" type="url" onchange="getData(this)" required>
+          </div>
+        <div class="flex flex-col gap-3">
+            <label class="block font-bold">Product Price</label>
+            <input class="border w-full py-2 px-4 bg-transparent outline-none"type="text" onchange="getData(this)" id="price" required>
+          </div>
+        <div class="flex flex-col gap-3">
+            <label class="block font-bold">Product Description</label>
+        <textarea class="border w-full py-2 px-4 bg-transparent outline-none" onchange="getData(this)" id="desc" required></textarea>
+          </div>
+          <button class="flex items-center px-4 py-2 bg-green-600 hover:bg-green-800 text-white font-semibold rounded-md w-fit cursor-pointer loader" >
+               Add Product
+          </button>
+      </form>
+    </div>
+    <script src="./createproduct.js"></script>
+</body>
+</html>
