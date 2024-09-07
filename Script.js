@@ -1,17 +1,11 @@
-
-// let navBtn = document.getElementById("nav-btn");
-// let mobileNav = document.getElementById("nav");
-
-// navBtn.onclick = () => {
-//   mobileNav.style.maxWidth = mobileNav.style.maxWidth ? null : mobileNav.scrollWidth + "px";
-// };
-
 const cardContainer = document.querySelector(".card");
 const productCard = ({ title, img, price, desc }) => {
     return `
         <div class="w-full max-w-sm border rounded-lg">
             <a href="#">
+            <div class="bg-white mb-3">
             <img class="w-full h-[200px] object-contain" src="${img}" alt="" />
+            </div>
             </a>
             <div class="px-3 pb-3 flex justify-between">
                 <a href="#"><h5 class="text-lg font-semibold line-clamp-1">${title}</h5></a>
@@ -34,7 +28,6 @@ const productCardSkeleton = () => {
 
 const length = document.querySelector(".Product-length");
 let productList = [] ;
-length.innerHTML = productList.length
 const renderData = (data, container, fun) => {
     container.innerHTML = `${data.map(fun).join("")}`;
 };
@@ -45,7 +38,7 @@ const fetchDataByApi = async () => {
     if (data.length == 0) {
         cardContainer.innerHTML = "<h1 class='col-span-full text-2xl'>No Products Available...</h1>"
     } else {
-        
+        length.innerHTML = data.length
         productList = data
         renderData(data, cardContainer, productCard);
     }
