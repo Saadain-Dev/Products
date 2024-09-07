@@ -10,28 +10,36 @@
     <!-- axios link -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Document</title>
+    <style>
+    .responsive-sidebar{left: -100% !important;}
+    .responsive-sidebar.active{left: 0% !important;}
+    </style>
 </head>
-<body class="flex px-[5vw]">
+<body class="flex px-[2vw] gap-8 pb-10 h-[100vh]">
     <!-- Side-Bar -->
-    <div class="flex flex-col w-[200px] md:w-[400px] mt-5 absolute md:relative z-10 left-0 hidden md:block bg-white px-5 md:px-0">
-    <form action="" class="flex mb-5">
-        <input type="text" class="inp border px-3 py-1 outline-none w-full md:w-[200px]" placeholder="Search...">
-    </form>
-    <div>
-        <h1 class="font-semibold">Category</h1>
-        <ul class="flex flex-col gap-2 mt-3 text-sm  text-gray-600">
-            <li><a href="">All</a></li>
-            <li><a href="">Mobile</a></li>
-            <li><a href="">Laptop</a></li>
-            <li><a href="">Computer</a></li>
-            <li><a href="">Accessories</a></li>
-            <li><a href="">Watch</a></li>
-            <li><a href="./create.html">Create</a></li>
-        </ul>
-    </div>
+    <div class="flex flex-col w-[280px] h-[calc(100vh-20px)] pt-5 px-5 md:px-0 bg-white absolute duration-500 md:static z-10 md:left-0 responsive-sidebar overflow-y-auto">
+        <button class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md md:hidden sidebar-btn absolute right-5">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <form action="" class="flex mb-5 mmt-10 md:mt-0 relative">
+            <input type="text" class="inp px-3 py-1 outline-none bg-gray-100 hover:bg-gray-200 rounded-md w-full" placeholder="Search...">
+            <i class="fa-solid fa-magnifying-glass absolute right-3 top-2"></i>
+        </form>
+        <div>
+            <h1 class="font-semibold">Category</h1>
+            <ul class="flex flex-col gap-2 mt-3 text-sm text-gray-600">
+                <li class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md"><a href="">All</a></li>
+                <li class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md"><a href="">Mobile</a></li>
+                <li class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md"><a href="">Laptop</a></li>
+                <li class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md"><a href="">Computer</a></li>
+                <li class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md"><a href="">Accessories</a></li>
+                <li class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md"><a href="">Watch</a></li>
+                <li class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md"><a href="./create.html">Create</a></li>
+            </ul>
+        </div>
         <div class="mt-4">
-            <h1 class="font-semibold mb-3 ">Company</h1>
-            <select name="" id="" class="px-3 py-1 text-sm text-gray-600 bg-white border  cursor-pointer">
+            <h1 class="font-semibold mb-3">Company</h1>
+            <select name="" id="" class="px-3 py-1 text-sm bg-gray-100 hover:bg-gray-200 rounded-md cursor-pointer">
                 <option value="">Select</option>
                 <option value="">All</option>
                 <option value="">Mobile</option>
@@ -43,37 +51,38 @@
         </div>
         <div class="mt-4">
             <h1 class="font-semibold">Colors</h1>
-        <div class="flex gap-2 mt-2 items-center">
-            <h1 class="text-sm text-gray-600 ">All</h1>
-            <input type="color" class="rounded-full w-4 h-4">
-        </div>
+            <div class="flex gap-2 mt-2 items-center">
+                <h1 class="text-sm text-gray-600">All</h1>
+                <input type="color" class="rounded-full w-4 h-4">
+            </div>
         </div>
         <div class="mt-4">
             <h1 class="font-semibold mb-3">Price</h1>
-                <h1 id="valueDisplay" class="text-sm text-gray-600">$20,000,000</h1>
-                <input type="range" id="rangeInput" class="w-[50%]" min="0" max="20000000" step="100000" value="20000000">
-            </div>
-        <button class="border bg-red-400 py-2 px-5 rounded-md w-fit text-sm mt-5">CLEAR FILTERS</button>
+            <h1 id="valueDisplay" class="text-sm text-gray-600">$20,000,000</h1>
+            <input type="range" id="rangeInput" class="w-[50%]" min="0" max="20000000" step="100000" value="20000000">
+        </div>
+        <button class="py-2 px-5 text-sm mt-5 bg-gray-100 hover:bg-red-500 duration-500 rounded-md">CLEAR FILTERS</button>
     </div>
+    
     <!-- Side-Bar -->
 
      <!-- Products-Section -->
-     <div class="w-full  mt-5">
+     <div class="w-full pt-5">
         <div class="flex justify-between items-center">
             <div class="hidden md:block">
-                <button class=" px-2 py-1 text-white bg-black me-2"><i class="fa-brands fa-windows"></i></button>
-                <button class=" px-2 py-1 text-gray-400 bg-gray-200"><i class="fa-solid fa-bars"></i></button>
+
+                <button class=" px-2 py-1 text-white px-3 py-1 bg-gray-900 hover:bg-gray-700 rounded-md me-2"><i class="fa-brands fa-windows"></i></button>
+                <button class=" px-2 py-1 px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md"><i class="fa-solid fa-bars"></i></button>
             </div>
-            <button class=" px-2 py-1 text-gray-400 bg-gray-200 md:hidden"><i class="fa-solid fa-bars"></i></button>
+            <button class="px-2 py-1 px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md md:hidden sidebar-btn"><i class="fa-solid fa-bars"></i></button>
             <h1 class="text-gray-400 text-sm "><span class="Product-length">0</span> Total Products</h1>
-            <select name="" id="" class="px-2 w-20 py-1 text-sm bg-white border text-gray-400 cursor-pointer">
+            <select name="" id="" class="px-2 w-20 py-1 text-sm px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md cursor-pointer">
                 <option value="">Select</option>
                 <option value="">High(Price)</option>
-                <option value="">Middle(Price)</option>
                 <option value="">Lowest(Price)</option>
             </select>
         </div>
-        <div class="w-full card grid sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-5 place-items-center">
+        <div class="w-full card grid sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-5 place-items-center h-[550px] overflow-y-auto">
         </div>
     </div>
      <!-- Products-Section -->

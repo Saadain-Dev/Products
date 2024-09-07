@@ -1,3 +1,18 @@
+
+// Select all sidebars and buttons
+let sidebars = document.querySelector(".responsive-sidebar");
+let sidebarBtns = document.querySelectorAll(".sidebar-btn");
+
+// Function to toggle the sidebar
+const toggleSidebar = () => {
+  sidebars.classList.toggle("active");
+}
+
+// Add event listener to each button
+sidebarBtns.forEach(button => button.addEventListener("click", toggleSidebar));
+
+
+
 const cardContainer = document.querySelector(".card");
 const productCard = ({ title, img, price, desc }) => {
     return `
