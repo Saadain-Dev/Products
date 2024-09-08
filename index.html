@@ -14,27 +14,29 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Document</title>
     <style>
-        .responsive-sidebar {
-            left: -100% !important;
-        }
-
         .responsive-sidebar.active {
-            left: 0% !important;
+            width: 270px !important;
+            padding-top: 1.25rem;
+            padding-left: 0.75rem;
+            padding-right: 1.25rem;
+            border-right: 2px solid rgba(128, 128, 128, 0.404);
         }
     </style>
 </head>
 
-<body class="flex px-[2vw] gap-8 pb-10 h-[100vh]">
+<body class="flex px-[2vw] gap-8">
     <!-- Side-Bar -->
+    <!-- <div
+        class="flex flex-col w-[300px] h-[calc(100vh-20px)] pt-5 px-5  md:pe-5  bg-white absolute duration-500  z-10 md:left-0 responsive-sidebar overflow-y-auto"> -->
     <div
-        class="flex flex-col w-[300px] h-[calc(100vh-20px)] pt-5 px-5  md:pe-5  bg-white absolute duration-500 md:static z-10 md:left-0 responsive-sidebar overflow-y-auto">
-
+        class="flex flex-col w-0 pt-5 duration-500 responsive-sidebar overflow-hidden absolute md:static bg-white">
         <form action="" class="flex gap-5 mb-5 md:mt-0 relative">
             <button class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md 
             sidebar-btn md:hidden shadow-md">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-            <input type="text" class="inp px-3 py-1 outline-none bg-gray-50 hover:bg-gray-100 rounded-md w-full shadow-md"
+            <input type="text"
+                class="inp px-3 py-1 outline-none bg-gray-50 hover:bg-gray-100 rounded-md w-full shadow-md"
                 placeholder="Search...">
             <i class="fa-solid fa-magnifying-glass absolute right-3 top-2"></i>
         </form>
@@ -75,7 +77,8 @@
                     </button>
                 </select>
                 <li class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md shadow-md"><a href="">Accessories</a></li>
-                <li class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md shadow-md"><a href="./create.html">Create</a></li>
+                <li class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md shadow-md"><a
+                        href="./create.html">Create</a></li>
             </ul>
         </div>
         <div class="mt-4">
@@ -104,24 +107,25 @@
     <!-- Products-Section -->
     <div class="w-full pt-5">
         <div class="flex justify-between items-center">
-            <div class="hidden md:block">
-                <button class=" px-2 py-1 text-white bg-gray-900 hover:bg-gray-700 rounded-md me-2"><i
-                        class="fa-brands fa-windows"></i></button>
-                <button class=" px-2 py-1 bg-gray-50 hover:bg-gray-100 rounded-md"><i
-                        class="fa-solid fa-bars"></i></button>
-            </div>
-            <button class="px-2 py-1 px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md md:hidden sidebar-btn"><i
+            <button class="px-2 py-1 px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md md:hidd sidebar-btn"><i
                     class="fa-solid fa-bars"></i></button>
             <h1 class="text-gray-400 text-sm "><span class="Product-length">0</span> Total Products</h1>
-            <select name="" id=""
-                class="px-2 w-20 py-1 text-sm bg-gray-50 hover:bg-gray-100 rounded-md cursor-pointer">
-                <option value="">Select</option>
-                <option value="">High(Price)</option>
-                <option value="">Lowest(Price)</option>
-            </select>
+            <div class="flex">
+                <div class="hidden md:block ">
+                <button class=" px-2 py-1 text-white bg-gray-900 hover:bg-gray-700 rounded-md"><i
+                        class="fa-brands fa-windows"></i></button>
+                <button class=" px-2 py-1 bg-gray-50 hover:bg-gray-100 rounded-md mx-2"><i
+                        class="fa-solid fa-bars"></i></button>
+                    </div>
+                <select name="" id=""
+                    class="px-2 w-20 py-1 text-sm bg-gray-50 hover:bg-gray-100 rounded-md cursor-pointer">
+                    <option value="">Select</option>
+                    <option value="">High(Price)</option>
+                    <option value="">Lowest(Price)</option>
+                </select>
+            </div>
         </div>
-        <div
-            class="w-full card grid sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-5 place-items-center h-[550px] overflow-y-auto">
+        <div class="w-full card grid sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-5 place-items-center">
         </div>
     </div>
     <!-- Products-Section -->

@@ -16,7 +16,7 @@ sidebarBtns.forEach(button => button.addEventListener("click", toggleSidebar));
 const cardContainer = document.querySelector(".card");
 const productCard = ({ title, img, price, desc }) => {
     return `
-        <div class="w-full max-w-sm border rounded-lg">
+        <div class="w-full border rounded-lg">
             <a href="#">
             <div class="bg-white mb-3">
             <img class="w-full h-[200px] object-contain" src="${img}" alt="" />
@@ -32,7 +32,7 @@ const productCard = ({ title, img, price, desc }) => {
 
 const productCardSkeleton = () => {
     return `
- <div class="w-full max-w-sm border rounded-lg bg-gray-200 animate-pulse">
+ <div class="w-full border rounded-lg bg-gray-200 animate-pulse">
     <div class="bg-gray-300 mb-3 h-[220px]"></div>
     <div class="px-3 pb-3 flex justify-between items-center">
         <div class="w-1/2 h-6 bg-gray-300 rounded"></div>
