@@ -51,7 +51,7 @@ const fetchDataByApi = async () => {
     renderData([1, 1, 1, 1, 1, 1], cardContainer, productCardSkeleton);
     let { data } = await axios.get("https://66d70f85006bfbe2e64fa810.mockapi.io/products");
     if (data.length == 0) {
-        cardContainer.innerHTML = "<h1 class='col-span-full text-2xl'>No Products Available...</h1>"
+        cardContainer.innerHTML = "<h1 class='col-span-full text-lg md:text-2xl'>No Products Available...</h1>"
     } else {
         length.innerHTML = data.length
         productList = data
