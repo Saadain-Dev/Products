@@ -1,0 +1,22 @@
+.responsive-sidebar.active {
+    width: 270px;
+    padding: 1.25rem 1.25rem 0px 0.75rem ;
+}
+
+.scroll-hidden::-webkit-scrollbar {
+display: none;
+}
+
+.scroll-hidden {
+overflow: scroll; 
+}
+
+.responsive-sidebar.active ~ .content .sidebar-btn {
+display: none;
+}
+
+@media (min-width: 768px) { 
+.responsive-sidebar.active ~ .content {
+width: calc(100% - 270px);
+}
+}

@@ -6,6 +6,7 @@ let sidebarBtns = document.querySelectorAll(".sidebar-btn");
 // Function to toggle the sidebar
 const toggleSidebar = () => {
   sidebars.classList.toggle("active");
+  sidebarBtns.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
 }
 
 // Add event listener to each button

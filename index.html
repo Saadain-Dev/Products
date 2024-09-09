@@ -10,106 +10,62 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Css link -->
+     <link rel="stylesheet" href="./style.css">
     <!-- axios link -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <title>Document</title>
-    <style>
-        .responsive-sidebar.active {
-            width: 270px !important;
-            padding-top: 1.25rem;
-            padding-left: 0.75rem;
-            padding-right: 1.25rem;
-            border-right: 2px solid rgba(128, 128, 128, 0.404);
-        }
-    </style>
+    <title>Products</title>
 </head>
-
-<body class="flex px-[2vw] gap-8">
+<body class="px-[2vw]">
     <!-- Side-Bar -->
-    <!-- <div
-        class="flex flex-col w-[300px] h-[calc(100vh-20px)] pt-5 px-5  md:pe-5  bg-white absolute duration-500  z-10 md:left-0 responsive-sidebar overflow-y-auto"> -->
-    <div
-        class="flex flex-col w-0 pt-5 duration-500 responsive-sidebar overflow-hidden absolute md:static bg-white">
-        <form action="" class="flex gap-5 mb-5 md:mt-0 relative">
-            <button class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md 
-            sidebar-btn md:hidden shadow-md">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <input type="text"
-                class="inp px-3 py-1 outline-none bg-gray-50 hover:bg-gray-100 rounded-md w-full shadow-md"
-                placeholder="Search...">
-            <i class="fa-solid fa-magnifying-glass absolute right-3 top-2"></i>
-        </form>
-        <div>
-            <h1 class="font-semibold">Category</h1>
-            <ul class="flex flex-col gap-3 mt-3 text-sm text-gray-600">
-                <button class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md text-left shadow-md">All</button>
-                <select name="" id="" class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md shadow-md">
-                    <button>
-                        <option value="">All Mobiles</option>
-                        <option value="">Iphone</option>
-                        <option value="">Android</option>
-                    </button>
-                </select>
-                <select name="" id="" class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md shadow-md">
-                    <button>
-                        <option value="">All Laptops</option>
-                        <option value="">Apple</option>
-                        <option value="">Dell</option>
-                        <option value="">HP</option>
-                        <option value="">Lenevo</option>
-                    </button>
-                </select>
-                <select name="" id="" class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md shadow-md">
-                    <button>
-                        <option value="">All Computers</option>
-                        <option value="">Dell</option>
-                        <option value="">HP</option>
-                        <option value="">Lenevo</option>
-                    </button>
-                </select>
-                <select name="" id="" class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md shadow-md">
-                    <button>
-                        <option value="">All Watches</option>
-                        <option value="">Hand Watch</option>
-                        <option value="">Smart Watch</option>
-                        <option value="">Wall Clock</option>
-                    </button>
-                </select>
-                <li class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md shadow-md"><a href="">Accessories</a></li>
-                <li class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md shadow-md"><a
-                        href="./create.html">Create</a></li>
-            </ul>
-        </div>
-        <div class="mt-4">
-            <h1 class="font-semibold mb-3">Company</h1>
-            <select name="" id="" class="px-3 py-1 text-sm bg-gray-50 hover:bg-gray-100 rounded-md cursor-pointer">
-                <option value="">Select</option>
-                <option value="">All</option>
-                <option value="">Mobile</option>
-                <option value="">Laptop</option>
-                <option value="">Computer</option>
-                <option value="">Accessories</option>
-                <option value="">Watch</option>
-            </select>
-        </div>
-        <div class="mt-4">
-            <h1 class="font-semibold mb-3">Price</h1>
-            <h1 id="valueDisplay" class="text-sm text-gray-600">$20,000,000</h1>
-            <input type="range" id="rangeInput" class="w-[50%]" min="0" max="20000000" step="100000" value="20000000">
-        </div>
-        <button class="py-2 px-5 text-sm mt-5 bg-gray-50 hover:bg-red-500 duration-500 rounded-md">CLEAR
-            FILTERS</button>
+   <div class="flex flex-col w-0 py-5 duration-500 responsive-sidebar overflow-y-auto h-full absolute md:fixed bg-white active">
+    
+    <form action="" class="flex gap-5 mb-5 md:mt-0 relative">
+        <input type="text"
+        class="inp px-3 py-1 outline-none bg-gray-50 hover:bg-gray-100 rounded-md w-full shadow-md"
+        placeholder="Search...">
+        <i class="fa-solid fa-magnifying-glass absolute right-16 top-2"></i>
+        <button class="px-2 py-1 px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md md:hidd sidebar-btn"><i
+            class="fa-solid fa-xmark"></i></button>
+    </form>
+    <div>
+        <h1 class="font-semibold">Category</h1>
+        <ul class="flex flex-col gap-3 mt-3 text-sm text-gray-600">
+            <button class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md text-left shadow-md">All</button>
+            <button class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md text-left shadow-md">Mobile</button>
+            <button class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md text-left shadow-md">Laptop</button>
+            <button class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md text-left shadow-md">Computer</button>
+            <button class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md text-left shadow-md">Accessories</button>
+            <button class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md text-left shadow-md">Watch</button>
+            <a href="./create.html" class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md shadow-md">Create</a>
+        </ul>
     </div>
-
+    <div class="mt-4">
+        <h1 class="font-semibold mb-3">Company</h1>
+        <select name="" id="" class="px-3 py-1 text-sm bg-gray-50 hover:bg-gray-100 rounded-md cursor-pointer">
+            <option value="">Select</option>
+            <option value="">All</option>
+            <option value="">Mobile</option>
+            <option value="">Laptop</option>
+            <option value="">Computer</option>
+            <option value="">Accessories</option>
+            <option value="">Watch</option>
+        </select>
+    </div>
+    <div class="mt-4">
+        <h1 class="font-semibold mb-3">Price</h1>
+        <h1 id="valueDisplay" class="text-sm text-gray-600">$20,000,000</h1>
+        <input type="range" id="rangeInput" class="w-[50%]" min="0" max="20000000" step="100000" value="20000000">
+    </div>
+    <button class="py-2 px-5 text-sm mt-5 bg-gray-50 hover:bg-red-500 duration-500 rounded-md">CLEAR FILTERS</button>
+</div>
     <!-- Side-Bar -->
-
     <!-- Products-Section -->
-    <div class="w-full pt-5">
+    <div class=" pt-5 md:ms-auto content max-md:w-full duration-500">
         <div class="flex justify-between items-center">
-            <button class="px-2 py-1 px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md md:hidd sidebar-btn"><i
-                    class="fa-solid fa-bars"></i></button>
-            <h1 class="text-gray-400 text-sm "><span class="Product-length">0</span> Total Products</h1>
+            <button class="px-2 py-1 px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md sidebar-btn"><i
+                class="fa-solid fa-bars"></i></button>
+            <h1 class="text-gray-400 text-sm text-center"><span class="Product-length">0</span> Total Products</h1>
             <div class="flex">
                 <div class="hidden md:block ">
                 <button class=" px-2 py-1 text-white bg-gray-900 hover:bg-gray-700 rounded-md"><i
