@@ -20,6 +20,7 @@ const Search = () => {
     }
     else{
       renderData(filteredProducts, cardContainer, productCard);
+      length.innerHTML = filteredProducts.length;
     }
 }
 searchProducts.addEventListener("input", Search);
@@ -41,13 +42,13 @@ const productCard = ({ title, img, price, desc, rating, brand}) => {
     <div class="p-6">
       <div class="space-y-3">
         <h2 class="font-bold text-lg leading-tight">${title}</h2>
-        <p class="text-gray-600 ">${desc}</p>
-        <div class="flex items-center space-x-2">
+        <p class="text-gray-600 line-clamp-2 ">${desc}</p>
+        <div class="flex justify-between items-center space-x-2">
           <span
-            class="inline-flex items-center px-2 py-1 text-sm font-medium text-green-800 bg-green-100 rounded-full">Rating:${rating}</span>
-          <span class="font-bold text-xl">${price}</span>
+            class="flex items-center px-2 py-1 text-sm font-medium text-green-800 bg-green-100 rounded-full">Rating: ${rating}</span>
+          <span class="font-bold text-xl"> ${price}</span>
         </div>
-        <p class="text-gray-800 text-sm">Brand:${brand}</p>
+        <p class="text-gray-800 text-sm">Brand: ${brand}</p>
       </div>
       <button class="mt-4 bg-teal-500 text-white py-2 px-4 rounded w-full hover:bg-teal-600">
         Add to Cart
@@ -56,6 +57,18 @@ const productCard = ({ title, img, price, desc, rating, brand}) => {
   </div>
         `;
 };
+const selectBox  = document.getElementById("selectBox");
+const handleSelect = (e) =>{
+let SelectValue = e.target.value;
+if(SelectValue){
+  
+}  
+
+}
+selectBox.addEventListener( "change" , handleSelect);
+
+
+
 
 const productCardSkeleton = () => {
     return `
@@ -95,9 +108,60 @@ const fetchDataByApi = async () => {
         length.innerHTML = data.length
         productList = data
         renderData(data, cardContainer, productCard);
-    }
+    
+const sorted = productList.sort((a,b)=>a.price - b.price).map(item=>item.price);
+console.log(sorted);
+
+
+      }
 };
 fetchDataByApi()
 
+const categories = ["All","Mobile Phones","Laptops","Accessories","Watches"];
+
+const catContainer = document.getElementById("catContainer");
+
+renderData(categories,catContainer,(item)=>`
+<button class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md text-left shadow-md" id="${item}">${item}</button>
+`)
 
 
+
+const handleCatogery = (e) =>{
+  if(e.target.tagName == "BUTTON"){
+    const filterByCat = productList.filter(item=>item.category == e.target.id || e.target.id == "All" );
+    renderData(filterByCat,cardContainer,productCard)
+    length.innerHTML = filterByCat.length
+  }
+
+}
+catContainer.addEventListener("click",handleCatogery);
+
+
+
+
+
+
+
+// const arr = ["a","d","c","b"];
+// const sortArr = arr.sort();
+// console.log(sortArr);
+
+// const arr = [3,33,12,1,22];
+// const sortArr = arr.sort((a,b)=>b-a);
+// console.log(sortArr);
+
+// const arr = [
+//   {name:"ali",age:18},
+//   {name:"alina",age:12},
+//   {name:"alif",age:28},
+//   {name:"bay",age:22},
+// ]
+
+// const sortedArrByAge = arr.sort((a,b)=>a.age-b.age);
+// console.log(sortedArrByAge);
+
+
+// const arr = [1,2,3,4];
+// const UnSortedArr = arr.map(item=>({num:item,idx:(Math.random()*100)+1})).sort((a,b)=>a.idx-b.idx).map(item=>item.num);
+// console.log(UnSortedArr);

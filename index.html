@@ -30,15 +30,7 @@
     </form>
     <div>
         <h1 class="font-semibold">Category</h1>
-        <ul class="flex flex-col gap-3 mt-3 text-sm text-gray-600">
-            <button class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md text-left shadow-md">All</button>
-            <button class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md text-left shadow-md">Mobile</button>
-            <button class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md text-left shadow-md">Laptop</button>
-            <button class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md text-left shadow-md">Computer</button>
-            <button class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md text-left shadow-md">Accessories</button>
-            <button class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md text-left shadow-md">Watch</button>
-            <a href="./create.html" class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md shadow-md">Create</a>
-        </ul>
+        <ul class="flex flex-col gap-3 mt-3 text-sm text-gray-600" id="catContainer"></ul>
     </div>
     <div class="mt-4">
         <h1 class="font-semibold mb-3">Price</h1>
@@ -61,11 +53,11 @@
                 <button class=" px-2 py-1 bg-gray-50 hover:bg-gray-100 rounded-md mx-2"><i
                         class="fa-solid fa-bars"></i></button>
                     </div>
-                <select name="" id=""
+                <select name="" id="selectBox"
                     class="px-2 w-20 py-1 text-sm bg-gray-50 hover:bg-gray-100 rounded-md cursor-pointer">
                     <option value="">Select</option>
-                    <option value="">High(Price)</option>
-                    <option value="">Lowest(Price)</option>
+                    <option value="high">High(Price)</option>
+                    <option value="Lowest">Lowest(Price)</option>
                 </select>
             </div>
         </div>
