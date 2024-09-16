@@ -57,7 +57,7 @@ const productCard2 = ({ title, img, price, desc, rating, brand}) => {
           <div class="flex flex-col md:flex-row border border-gray-200 rounded-lg w-full p-4 md:px-8 card">
             <a href="#">
                 <div class="bg-white mb-3">
-                    <img class="w-full h-[300px] object-contain" loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO8AAxAr9ZNr9JCwn2QZ35rSWWuiayhh0ayQ&s" alt="" />
+                    <img class="w-full h-[300px]" loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO8AAxAr9ZNr9JCwn2QZ35rSWWuiayhh0ayQ&s" alt="" />
                 </div>
             </a>
             <div class="p-4 md:p-6 w-full">
