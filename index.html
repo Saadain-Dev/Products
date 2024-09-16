@@ -18,7 +18,7 @@
 </head>
 <body class="px-[2vw]">
     <!-- Side-Bar -->
-   <div class="flex flex-col w-0 py-5  duration-500 responsive-sidebar overflow-y-auto h-[100vh] fixed bg-white active">
+   <div class="flex flex-col w-0 py-5 duration-500 responsive-sidebar overflow-y-auto h-[100vh] fixed bg-white active">
     
     <form action="" class="flex gap-2 mb-5 md:mt-0 relative">
         <input type="text"
@@ -47,10 +47,10 @@
                 class="fa-solid fa-bars"></i></button>
             <h1 class="text-gray-400 text-sm text-center"><span class="Product-length">0</span> Total Products</h1>
             <div class="flex">
-                <div class="hidden md:block ">
-                <button class=" px-2 py-1 text-white bg-gray-900 hover:bg-gray-700 rounded-md"><i
+                <div>
+                <button class="btn1 px-2 py-1 text-white bg-gray-900 hover:bg-gray-700 rounded-md"><i
                         class="fa-brands fa-windows"></i></button>
-                <button class=" px-2 py-1 bg-gray-50 hover:bg-gray-100 rounded-md mx-2"><i
+                <button class="btn2 px-2 py-1 bg-gray-50 hover:bg-gray-100 rounded-md mx-2"><i
                         class="fa-solid fa-bars"></i></button>
                     </div>
                 <select name="" id="selectBox"
@@ -61,8 +61,8 @@
                 </select>
             </div>
         </div>
-        <div class="w-full card grid sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-5 place-items-center">
-        </div>
+        <div class="w-full card1 grid sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-5 place-items-center"></div>
+        <div class="w-full card2 flex flex-col gap-2 mt-5 place-items-center hidden"></div>
     </div>
     <!-- Products-Section -->
     <Script src="./Script.js"></Script>
