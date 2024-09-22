@@ -124,17 +124,9 @@
       });
       // Fetch initial data
       fetchDataByApi();
-
-
-
-     
       const select = document.querySelector("select");
       select.addEventListener("change", () => {
-          const sortedArrByAge = productList.sort((a, b) => {
-              const aPrice = parseFloat(a.price.slice(1)); // Assuming price starts with a dollar sign
-              const bPrice = parseFloat(b.price.slice(1));
-              return select.value === 'low' ? aPrice - bPrice : bPrice - aPrice;
-            });
+          const sortedArrByAge = productList.sort((a, b) => select.value === 'low' ? a.price - b.price : b.price - a.price);
             renderData(sortedArrByAge, cardContainer, productCard);
             renderData(sortedArrByAge, cardContainer2, productCard2);
       });
