@@ -54,7 +54,7 @@
                       <p class="text-gray-600 line-clamp-2">${desc}</p>
                       <div class="flex justify-between items-center space-x-2">
                           <span class="flex items-center px-2 py-1 text-sm font-medium text-green-800 bg-green-100 rounded-full">Rating: ${rating}</span>
-                          <span class="font-bold text-xl">${price}</span>
+                          <span class="font-bold text-xl">$${price}</span>
                       </div>
                       <p class="text-gray-800 text-sm">Brand: ${brand}</p>
                   </div>
@@ -124,10 +124,18 @@
       });
       // Fetch initial data
       fetchDataByApi();
-      const select = document.querySelector("select").value;
-      console.log(select);
-    const updateProducts = () =>{
-        const sortedArrByAge =  productList.sort((a, b) => select === 'low' ? a.price.slice(1) - b.price.slice(1) : b.price.slice(1) - a.price.slice(1));
-        console.log(sortedArrByAge);
-    }
-    
+
+
+
+     
+      const select = document.querySelector("select");
+      select.addEventListener("change", () => {
+          const sortedArrByAge = productList.sort((a, b) => {
+              const aPrice = parseFloat(a.price.slice(1)); // Assuming price starts with a dollar sign
+              const bPrice = parseFloat(b.price.slice(1));
+              return select.value === 'low' ? aPrice - bPrice : bPrice - aPrice;
+            });
+            renderData(sortedArrByAge, cardContainer, productCard);
+            renderData(sortedArrByAge, cardContainer2, productCard2);
+      });
+      
