@@ -47,10 +47,10 @@
             
             const productCard = ({ title, img, price, desc, rating, brand }) => `
             <div class="border border-gray-200 rounded-lg w-full">
-              <a href="#"><div class="bg-white mb-3"><img class="w-full h-[200px] object-contain" loading="lazy" src="${img}" alt="" /></div></a>
+              <a href="#"><div class="bg-white mb-3"><img class="w-full h-[200px] object-contain" loading="lazy" src="https://www.cityguide-dubai.com/fileadmin/_processed_/3/3/csm_img-worlds-of-adventures-teaser_40e4184da1.jpg" alt="" /></div></a>
               <div class="p-6">
                   <div class="space-y-3">
-                      <h2 class="font-bold text-lg leading-tight">${title}</h2>
+                      <h2 class="font-bold text-lg leading-tight line-clamp-1">${title}</h2>
                       <p class="text-gray-600 line-clamp-2">${desc}</p>
                       <div class="flex justify-between items-center space-x-2">
                           <span class="flex items-center px-2 py-1 text-sm font-medium text-green-800 bg-green-100 rounded-full">Rating: ${rating}</span>
@@ -65,7 +65,7 @@
 
       const productCard2 = ({ title, img, price, desc, rating, brand }) => `
       <div class="flex flex-col md:flex-row border border-gray-200 rounded-lg w-full p-4 md:px-8 card">
-              <a href="#"><div class="bg-white mb-3"><img class="w-full h-[300px] object-contain" loading="lazy" src="${img}" alt="" /></div></a>
+              <a href="#"><div class="bg-white mb-3"><img class="w-full h-[300px] object-contain" loading="lazy" src="https://www.cityguide-dubai.com/fileadmin/_processed_/3/3/csm_img-worlds-of-adventures-teaser_40e4184da1.jpg" alt="" /></div></a>
               <div class="p-4 md:p-6 w-full">
                   <div class="space-y-3 flex flex-col gap-5">
                       <h2 class="font-bold text-lg leading-tight">${title}</h2>
@@ -111,8 +111,7 @@
               length.innerHTML = filterByCat.length;
             }
         });
-        
-      // Button Toggle
+         
       document.querySelector(".btn1").addEventListener("click", () => {
           cardContainer.classList.remove("hidden");
           cardContainer2.classList.add("hidden");
@@ -122,8 +121,9 @@
           cardContainer.classList.add("hidden");
           cardContainer2.classList.remove("hidden");
       });
-      // Fetch initial data
       fetchDataByApi();
+
+
       const select = document.querySelector("select");
       select.addEventListener("change", () => {
           const sortedArrByAge = productList.sort((a, b) => select.value === 'low' ? a.price - b.price : b.price - a.price);
