@@ -72,7 +72,7 @@
                       <p class="text-gray-600 line-clamp-2">${desc}</p>
                       <div class="flex flex-row justify-between items-center space-y-2 md:space-y-0 md:space-x-2">
                           <span class="flex items-center px-2 py-1 text-sm font-medium text-green-800 bg-green-100 rounded-full">Rating: ${rating}</span>
-                          <span class="font-bold text-xl">${price}</span>
+                          <span class="font-bold text-xl">$${price}</span>
                           </div>
                       <p class="text-gray-800 text-sm">Brand: ${brand}</p>
                   </div>
@@ -130,4 +130,16 @@
             renderData(sortedArrByAge, cardContainer, productCard);
             renderData(sortedArrByAge, cardContainer2, productCard2);
       });
-      
+
+
+
+const clearFilter = document.querySelector(".clearFilters");
+clearFilter.addEventListener("click", () => {
+    select.value = "Select"
+    renderData(productList, cardContainer, productCard);
+    renderData(productList, cardContainer2, productCard2);
+    length.innerHTML = productList.length;
+});
+
+
+ 
