@@ -17,14 +17,13 @@
 </head>
 <body class="px-[2vw]">
     <!-- Side-Bar -->
-   <div class="flex flex-col w-0 py-5 duration-500 responsive-sidebar overflow-y-auto h-[100vh] fixed bg-white md:active">
-    
+   <div class="flex flex-col w-0  duration-500 responsive-sidebar overflow-y-auto h-[100vh] fixed bg-white md:w-[250px] md:pt-5 md:pe-1 md:ps-1">
     <form action="" class="flex gap-2 mb-5 md:mt-0 relative">
         <input type="text"
         class="inp px-3 py-1 outline-none bg-gray-50 hover:bg-gray-100 rounded-md w-full shadow-md"
         placeholder="Search...">
-        <i class="fa-solid fa-magnifying-glass absolute right-14 top-2"></i>
-        <button class="px-2 py-1 px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md sidebar-btn"><i
+        <i class="fa-solid fa-magnifying-glass absolute right-12 md:right-3 top-2"></i>
+        <button class="px-2 py-1 px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md sidebar-btn md:hidden"><i
             class="fa-solid fa-xmark"></i></button>
     </form>
     <div>
@@ -42,7 +41,7 @@
     <!-- Products-Section -->
     <div class=" pt-5 md:ms-auto content max-md:w-full duration-500">
         <div class="flex justify-between items-center w-full ">
-            <button class="px-2 py-1 px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md sidebar-btn"><i
+            <button class="px-2 py-1 px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md sidebar-btn md:hidden"><i
                 class="fa-solid fa-bars"></i></button>
             <h1 class="text-gray-400 text-sm text-center"><span class="Product-length">0</span> Total Products</h1>
             <div class="flex">

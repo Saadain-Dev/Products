@@ -132,7 +132,6 @@
       });
 
 
-
 const clearFilter = document.querySelector(".clearFilters");
 clearFilter.addEventListener("click", () => {
     select.value = "Select"
@@ -140,6 +139,3 @@ clearFilter.addEventListener("click", () => {
     renderData(productList, cardContainer2, productCard2);
     length.innerHTML = productList.length;
 });
-
-
- 

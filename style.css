@@ -1,6 +1,6 @@
 .responsive-sidebar.active {
-    width: 270px;
-    padding: 1.25rem 1.25rem 0px 0.75rem ;
+    width: 230px;
+    padding: 1rem 1.25rem 0px 0.75rem ;
 }
 
 .responsive-sidebar.active ~ .content .sidebar-btn {
@@ -8,7 +8,7 @@ display: none;
 }
 
 @media (min-width: 768px) { 
-.responsive-sidebar.active ~ .content {
+.responsive-sidebar ~ .content {
 width: calc(100% - 270px);
 }
 }
