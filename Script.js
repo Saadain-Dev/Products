@@ -1,10 +1,11 @@
-        // Toggle Sidebar
+        // Toggle Sidebar //
         document.querySelectorAll(".sidebar-btn").forEach(button => {
           button.addEventListener("click", () => document.querySelector(".responsive-sidebar").classList.toggle("active"));
         });
+        // Toggle Sidebar //
         
         // Product Data
-        let productList = [];
+      let productList = [];
       const cardContainer = document.querySelector(".card1");
       const cardContainer2 = document.querySelector(".card2");
       const length = document.querySelector(".Product-length");
@@ -47,7 +48,7 @@
             
             const productCard = ({ title, img, price, desc, rating, brand }) => `
             <div class="border border-gray-200 rounded-lg w-full">
-              <a href="#"><div class="bg-white mb-3"><img class="w-full h-[200px] object-contain" loading="lazy" src="https://www.cityguide-dubai.com/fileadmin/_processed_/3/3/csm_img-worlds-of-adventures-teaser_40e4184da1.jpg" alt="" /></div></a>
+              <a href="#"><div class="bg-white mb-3"><img class="w-full h-[200px] object-contain" loading="lazy" src="${img}" alt="" /></div></a>
               <div class="p-6">
                   <div class="space-y-3">
                       <h2 class="font-bold text-lg leading-tight line-clamp-1">${title}</h2>
@@ -65,7 +66,7 @@
 
       const productCard2 = ({ title, img, price, desc, rating, brand }) => `
       <div class="flex flex-col md:flex-row border border-gray-200 rounded-lg w-full p-4 md:px-8 card">
-              <a href="#"><div class="bg-white mb-3"><img class="w-full h-[300px] object-contain" loading="lazy" src="https://www.cityguide-dubai.com/fileadmin/_processed_/3/3/csm_img-worlds-of-adventures-teaser_40e4184da1.jpg" alt="" /></div></a>
+              <a href="#"><div class="bg-white mb-3"><img class="w-full  object-contain" loading="lazy" src="${img}" alt="" /></div></a>
               <div class="p-4 md:p-6 w-full">
                   <div class="space-y-3 flex flex-col gap-5">
                       <h2 class="font-bold text-lg leading-tight">${title}</h2>
@@ -99,7 +100,7 @@
         form.addEventListener("submit", (e) => e.preventDefault());
 
         // Categories
-        const categories = ["All", "Mobile Phones", "Laptops", "Accessories", "Watches"];
+        const categories = ["All", "Mobile Phones", "Laptops", "Accessories", "Watches", "Tablets", "Headphones"];
         const catContainer = document.getElementById("catContainer");
       renderData(categories, catContainer, (item) => `<button class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md text-left shadow-md" id="${item}">${item}</button>`);
       
@@ -111,31 +112,46 @@
               length.innerHTML = filterByCat.length;
             }
         });
-         
-      document.querySelector(".btn1").addEventListener("click", () => {
-          cardContainer.classList.remove("hidden");
-          cardContainer2.classList.add("hidden");
-      });
-      
-      document.querySelector(".btn2").addEventListener("click", () => {
-          cardContainer.classList.add("hidden");
-          cardContainer2.classList.remove("hidden");
-      });
-      fetchDataByApi();
+        
+        // viewChange //
+        const viewChange = document.querySelector(".btn1");
+        viewChange.addEventListener("click", () => {
+            cardContainer.classList.toggle("hidden");
+            cardContainer2.classList.toggle("hidden");
+            
+            if (viewChange.innerHTML.includes('fa-list')) {
+                viewChange.innerHTML = '<i class="fa-brands fa-microsoft"></i>';
+            } else {
+                viewChange.innerHTML = '<i class="fa-solid fa-list"></i>';
+            }
+        });
+        
+        fetchDataByApi();
+        // viewChange //
 
-
+        // selectPrice
       const select = document.querySelector("select");
       select.addEventListener("change", () => {
           const sortedArrByAge = productList.sort((a, b) => select.value === 'low' ? a.price - b.price : b.price - a.price);
             renderData(sortedArrByAge, cardContainer, productCard);
             renderData(sortedArrByAge, cardContainer2, productCard2);
       });
+        // selectPrice
 
-
+// Clear Filteers //
 const clearFilter = document.querySelector(".clearFilters");
 clearFilter.addEventListener("click", () => {
     select.value = "Select"
     renderData(productList, cardContainer, productCard);
     renderData(productList, cardContainer2, productCard2);
     length.innerHTML = productList.length;
+});
+// Clear Filteers //
+
+const rangeInput = document.getElementById('rangeInput');
+const valueDisplay = document.getElementById('valueDisplay');
+
+rangeInput.addEventListener('input', function() {
+    const value = Number(this.value).toLocaleString();
+    valueDisplay.textContent = `$${value}`;
 });

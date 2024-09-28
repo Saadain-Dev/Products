@@ -15,9 +15,9 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Products</title>
 </head>
-<body class="px-[2vw]">
+<body class="px-[2vw]">    
     <!-- Side-Bar -->
-   <div class="flex flex-col w-0  duration-500 responsive-sidebar overflow-y-auto h-[100vh] fixed bg-white md:w-[250px] md:pt-5 md:pe-1 md:ps-1">
+   <div class="flex flex-col w-0 duration-500 responsive-sidebar overflow-y-auto h-[100vh] fixed bg-white md:w-[250px] md:pt-5 md:pe-1 md:ps-1">
     <form action="" class="flex gap-2 mb-5 md:mt-0 relative">
         <input type="text"
         class="inp px-3 py-1 outline-none bg-gray-50 hover:bg-gray-100 rounded-md w-full shadow-md"
@@ -33,31 +33,28 @@
     <div class="mt-4">
         <h1 class="font-semibold mb-3">Price</h1>
         <h1 id="valueDisplay" class="text-sm text-gray-600">$20,000,000</h1>
-        <input type="range" id="rangeInput" class="w-full" min="0" max="20000000" step="100000" value="20000000">
+        <input type="range" id="rangeInput" class="w-full" min="0" max="20000000" step="100000" value="20000000" aria-label="Price Range">
     </div>
-    <button class="py-2 px-5 text-sm mt-5 bg-gray-50 hover:bg-red-500 duration-500 rounded-md clearFilters">CLEAR FILTERS</button>
+    <button class="py-2 px-5 text-white text-sm mt-5 bg-red-500 hover:bg-red-600 duration-500 rounded-md clearFilters font-semibold">CLEAR FILTERS</button>
 </div>
     <!-- Side-Bar -->
     <!-- Products-Section -->
     <div class=" pt-5 md:ms-auto content max-md:w-full duration-500">
         <div class="flex justify-between items-center w-full">
+            <div class="flex gap-2">
             <button class="px-2 py-1 px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md sidebar-btn md:hidden"><i
                 class="fa-solid fa-bars"></i></button>
-            <h1 class="text-gray-400 text-sm text-center"><span class="Product-length">0</span> Total Products</h1>
-            <div class="flex">
                 <div class="hidden sm:block">
-                <button class="btn1 px-2 py-1 text-white bg-gray-900 hover:bg-gray-700 rounded-md"><i
-                        class="fa-brands fa-windows"></i></button>
-                <button class="btn2 px-2 py-1 bg-gray-50 hover:bg-gray-100 rounded-md mx-2"><i
-                        class="fa-solid fa-bars"></i></button>
+                    <button class="btn1 px-2 py-1 text-white bg-gray-900 hover:bg-gray-700 rounded-md"><i class="fa-brands fa-microsoft"></i></button>
+                        </div>
                     </div>
-                <select name="" class="px-2 w-20 py-1 text-sm bg-gray-50 hover:bg-gray-100 rounded-md cursor-pointer select">
+            <h1 class="text-gray-400 text-sm text-center"><span class="Product-length">0</span> Total Products</h1>
+                <select name="" class="px-2 w-25 py-1 text-sm bg-gray-50 hover:bg-gray-100 rounded-md cursor-pointer select">
                     <!-- <option value="">Select</option> -->
-                     <option value="">Select</option>
+                     <option value="Select">Select</option>
                     <option value="low">Lowest(Price)</option>
                     <option value="high">High(Price)</option>
                 </select>
-            </div>
         </div>
         <div class="w-full card1 grid sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-5 place-items-center"></div>
         <div class="w-full card2 flex flex-col gap-2 mt-5 place-items-center hidden"></div>
