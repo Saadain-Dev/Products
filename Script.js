@@ -1,21 +1,21 @@
-        // Toggle Sidebar //
-        document.querySelectorAll(".sidebar-btn").forEach(button => {
-          button.addEventListener("click", () => document.querySelector(".responsive-sidebar").classList.toggle("active"));
-        });
-        // Toggle Sidebar //
-        
-        // Product Data
-      let productList = [];
-      const cardContainer = document.querySelector(".card1");
-      const cardContainer2 = document.querySelector(".card2");
-      const length = document.querySelector(".Product-length");
-      const form = document.querySelector("form");
-      const searchProducts = document.querySelector(".inp");
+// Toggle Sidebar //
+document.querySelectorAll(".sidebar-btn").forEach(button => {
+    button.addEventListener("click", () => document.querySelector(".responsive-sidebar").classList.toggle("active"));
+});
+// Toggle Sidebar //
 
-      const renderData = (data, container, templateFn) => container.innerHTML = data.map(templateFn).join("");
+// Product Data
+let productList = [];
+const cardContainer = document.querySelector(".card1");
+const cardContainer2 = document.querySelector(".card2");
+const length = document.querySelector(".Product-length");
+const form = document.querySelector("form");
+const searchProducts = document.querySelector(".inp");
 
-      const fetchDataByApi = async () => {
-          renderData([1, 1, 1, 1, 1, 1], cardContainer, () => `
+const renderData = (data, container, templateFn) => container.innerHTML = data.map(templateFn).join("");
+
+const fetchDataByApi = async () => {
+    renderData([1, 1, 1, 1, 1, 1], cardContainer, () => `
               <div class="skeleton-card border border-gray-200 rounded-lg w-full">
                   <a href="#"><div class="bg-gray-200 mb-3 h-[200px] animate-pulse"></div></a>
                   <div class="p-6">
@@ -32,21 +32,21 @@
                       </div>
               </div>
               `);
-              
-              const { data } = await axios.get("https://66d70f85006bfbe2e64fa810.mockapi.io/products");
-              
-              if (data.length === 0) {
-                  cardContainer.innerHTML = "<h1 class='col-span-full text-lg md:text-2xl'>No Products Available...</h1>";
-                  cardContainer2.innerHTML = "<h1 class='col-span-full text-lg md:text-2xl'>No Products Available...</h1>";
-                } else {
-                    productList = data;
-                    length.innerHTML = data.length;
-                    renderData(data, cardContainer, productCard);
-                    renderData(data, cardContainer2, productCard2);
-                }
-            };
-            
-            const productCard = ({ title, img, price, desc, rating, brand }) => `
+
+    const { data } = await axios.get("https://66d70f85006bfbe2e64fa810.mockapi.io/products");
+
+    if (data.length === 0) {
+        cardContainer.innerHTML = "<h1 class='col-span-full text-lg md:text-2xl'>No Products Available...</h1>";
+        cardContainer2.innerHTML = "<h1 class='col-span-full text-lg md:text-2xl'>No Products Available...</h1>";
+    } else {
+        productList = data;
+        length.innerHTML = data.length;
+        renderData(productList, cardContainer, productCard);
+        renderData(p, cardContainer2, productCard2);
+    }
+};
+
+const productCard = ({ title, img, price, desc, rating, brand }) => `
             <div class="border border-gray-200 rounded-lg w-full">
               <a href="#"><div class="bg-white mb-3"><img class="w-full h-[200px] object-contain" loading="lazy" src="${img}" alt="" /></div></a>
               <div class="p-6">
@@ -64,7 +64,7 @@
           </div>
           `;
 
-      const productCard2 = ({ title, img, price, desc, rating, brand }) => `
+const productCard2 = ({ title, img, price, desc, rating, brand }) => `
       <div class="flex flex-col md:flex-row border border-gray-200 rounded-lg w-full p-4 md:px-8 card">
               <a href="#"><div class="bg-white mb-3"><img class="w-full  object-contain" loading="lazy" src="${img}" alt="" /></div></a>
               <div class="p-4 md:p-6 w-full">
@@ -81,69 +81,69 @@
               </div>
               </div>
       `;
-      
-      const Search = () => {
-          const inputValue = searchProducts.value.toLowerCase();
-          const filteredProducts = productList.filter(item => item.title.toLowerCase().includes(inputValue));
 
-          if (filteredProducts.length === 0) {
-              cardContainer.innerHTML = "<h1 class='col-span-full text-lg md:text-2xl'>Not Available...</h1>";
-              cardContainer2.innerHTML = "<h1 class='col-span-full text-lg md:text-2xl'>Not Available...</h1>";
-            } else {
-                renderData(filteredProducts, cardContainer, productCard);
-                renderData(filteredProducts, cardContainer2, productCard2);
-                length.innerHTML = filteredProducts.length;
-            }
-        };
+const Search = () => {
+    const inputValue = searchProducts.value.toLowerCase();
+    const filteredProducts = productList.filter(item => item.title.toLowerCase().includes(inputValue));
 
-        searchProducts.addEventListener("input", Search);
-        form.addEventListener("submit", (e) => e.preventDefault());
+    if (filteredProducts.length === 0) {
+        cardContainer.innerHTML = "<h1 class='col-span-full text-lg md:text-2xl'>Not Available...</h1>";
+        cardContainer2.innerHTML = "<h1 class='col-span-full text-lg md:text-2xl'>Not Available...</h1>";
+    } else {
+        renderData(filteredProducts, cardContainer, productCard);
+        renderData(filteredProducts, cardContainer2, productCard2);
+        length.innerHTML = filteredProducts.length;
+    }
+};
 
-        // Categories
-        const categories = ["All", "Mobile Phones", "Laptops", "Accessories", "Watches", "Tablets", "Headphones"];
-        const catContainer = document.getElementById("catContainer");
-      renderData(categories, catContainer, (item) => `<button class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md text-left shadow-md" id="${item}">${item}</button>`);
-      
-      catContainer.addEventListener("click", (e) => {
-          if (e.target.tagName === "BUTTON") {
-              const filterByCat = productList.filter(item => item.category === e.target.id || e.target.id === "All");
-              renderData(filterByCat, cardContainer, productCard);
-              renderData(filterByCat, cardContainer2, productCard2);
-              length.innerHTML = filterByCat.length;
-            }
-        });
-        
-        // viewChange //
-        const viewChange = document.querySelector(".btn1");
-        viewChange.addEventListener("click", () => {
-            cardContainer.classList.toggle("hidden");
-            cardContainer2.classList.toggle("hidden");
-            
-            if (viewChange.innerHTML.includes('fa-list')) {
-                viewChange.innerHTML = '<i class="fa-brands fa-microsoft"></i>';
-            } else {
-                viewChange.innerHTML = '<i class="fa-solid fa-list"></i>';
-            }
-        });
-        
-        fetchDataByApi();
-        // viewChange //
+searchProducts.addEventListener("input", Search);
+form.addEventListener("submit", (e) => e.preventDefault());
 
-        // selectPrice
-      const select = document.querySelector("select");
-      select.addEventListener("change", () => {
-          const sortedArrByAge = productList.sort((a, b) => select.value === 'low' ? a.price - b.price : b.price - a.price);
-            renderData(sortedArrByAge, cardContainer, productCard);
-            renderData(sortedArrByAge, cardContainer2, productCard2);
-      });
-        // selectPrice
+// Categories
+const categories = ["All", "Mobile Phones", "Laptops", "Accessories", "Watches", "Tablets", "Headphones"];
+const catContainer = document.getElementById("catContainer");
+renderData(categories, catContainer, (item) => `<button class="px-3 py-1 bg-gray-50 hover:bg-gray-100 rounded-md text-left shadow-md" id="${item}">${item}</button>`);
+catContainer.addEventListener("click", (e) => {
+    if (e.target.tagName === "BUTTON") {
+        const filterByCat = productList.filter(item => item.category === e.target.id || e.target.id === "All");
+        renderData(filterByCat, cardContainer, productCard);
+        renderData(filterByCat, cardContainer2, productCard2);
+        length.innerHTML = filterByCat.length;
+    }
+});
+
+
+// viewChange //
+const viewChange = document.querySelector(".btn1");
+viewChange.addEventListener("click", () => {
+    cardContainer.classList.toggle("hidden");
+    cardContainer2.classList.toggle("hidden");
+
+    if (viewChange.innerHTML.includes('fa-microsoft')) {
+        viewChange.innerHTML = '<i class="fa-solid fa-list"></i>';
+    } else {
+        viewChange.innerHTML = '<i class="fa-brands fa-microsoft"></i>';
+    }
+});
+
+fetchDataByApi();
+// viewChange //
+
+// selectPrice
+const select = document.querySelector("select");
+select.addEventListener("change", () => {
+    const sortedArrByAge = productList.sort((a, b) => select.value === 'low' ? a.price - b.price : b.price - a.price);
+    renderData(sortedArrByAge, cardContainer, productCard);
+    renderData(sortedArrByAge, cardContainer2, productCard2);
+});
+// selectPrice
 
 // Clear Filteers //
 const clearFilter = document.querySelector(".clearFilters");
 clearFilter.addEventListener("click", () => {
-    select.value = "Select"
     renderData(productList, cardContainer, productCard);
     renderData(productList, cardContainer2, productCard2);
+    select.value = "Select"
     length.innerHTML = productList.length;
 });
 // Clear Filteers //
@@ -151,7 +151,7 @@ clearFilter.addEventListener("click", () => {
 const rangeInput = document.getElementById('rangeInput');
 const valueDisplay = document.getElementById('valueDisplay');
 
-rangeInput.addEventListener('input', function() {
+rangeInput.addEventListener('input', function () {
     const value = Number(this.value).toLocaleString();
     valueDisplay.textContent = `$${value}`;
 });
